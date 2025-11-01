@@ -71,8 +71,7 @@ const Index = () => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              Authorization:
-                "Bearer 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",
+              Authorization: `Bearer ${import.meta.env.VITE_OPENROUTER_API_KEY}`,
             },
             body: JSON.stringify({
               model: "google/gemini-2.5-flash",
