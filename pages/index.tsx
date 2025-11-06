@@ -53,7 +53,7 @@ export default function Home() {
 
       <Hero
         badge={
-          <Badge variant="outline" className="animate-appear">
+          <Badge variant="outline" className="animate-appear text-base sm:text-lg md:text-xl px-4 py-2">
             <span className="text-muted-foreground">
               ✨ 全新升级，更多话术风格等你探索
             </span>

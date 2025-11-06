@@ -70,7 +70,7 @@ export default function Navbar({
           <NavbarLeft>
             <a
               href={homeUrl}
-              className="flex items-center gap-2 text-xl font-bold"
+              className="flex items-center gap-2 text-2xl font-bold"
             >
               {logo}
               {name}
@@ -83,6 +83,8 @@ export default function Navbar({
                 <Button
                   key={index}
                   variant={action.variant || "default"}
+                  size={action.text === "立即开始" ? "lg" : "default"}
+                  className={action.text === "立即开始" ? "text-lg font-semibold" : ""}
                   asChild
                 >
                   <a href={action.href}>
@@ -95,7 +97,7 @@ export default function Navbar({
                 <a
                   key={index}
                   href={action.href}
-                  className="hidden text-sm md:block"
+                  className="hidden text-base md:block"
                 >
                   {action.text}
                 </a>
