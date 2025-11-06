@@ -1,17 +1,8 @@
 /** @type {import('next').NextConfig} */
-const path = require('path');
-
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // 确保路径别名工作正常
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': path.resolve(__dirname, './src'),
-    };
-    return config;
-  },
+  // Next.js 14 会自动读取 tsconfig.json 中的路径配置
 }
 
 module.exports = nextConfig
