@@ -4,6 +4,16 @@
 
 **URL**: https://lovable.dev/projects/b8b1ac7b-8e22-4efd-a81a-3fc9bf807279
 
+## 🚀 Migration to Next.js Complete!
+
+This project has been migrated from **Vite + React Router** to **Next.js** (Pages Router).
+
+### What Changed:
+- ✅ Migrated from Vite to Next.js
+- ✅ Converted React Router to Next.js file-based routing
+- ✅ Updated environment variables (`VITE_*` → `NEXT_PUBLIC_*`)
+- ✅ Preserved all existing functionality
+
 ## How can I edit this code?
 
 There are several ways of editing your application.
@@ -32,11 +42,11 @@ cd <YOUR_PROJECT_NAME>
 # Step 3: Install the necessary dependencies.
 npm i
 
-# Step 4: Create a .env file and add your OpenRouter API key.
+# Step 4: Create a .env.local file and add your OpenRouter API key.
 # Get your API key from https://openrouter.ai/keys
-echo "VITE_OPENROUTER_API_KEY=your_api_key_here" > .env
+echo "NEXT_PUBLIC_OPENROUTER_API_KEY=your_api_key_here" > .env.local
 
-# Step 5: Start the development server with auto-reloading and an instant preview.
+# Step 5: Start the Next.js development server.
 npm run dev
 ```
 
@@ -61,22 +71,24 @@ npm run dev
 This project requires an OpenRouter API key to generate content. 
 
 1. Get your API key from [OpenRouter](https://openrouter.ai/keys)
-2. Create a `.env` file in the project root
+2. Create a `.env.local` file in the project root (Next.js uses `.env.local` for local development)
 3. Add the following line:
    ```
-   VITE_OPENROUTER_API_KEY=your_api_key_here
+   NEXT_PUBLIC_OPENROUTER_API_KEY=your_api_key_here
    ```
+   **Note:** In Next.js, environment variables that need to be exposed to the browser must be prefixed with `NEXT_PUBLIC_`
 4. Restart the development server
 
 ## What technologies are used for this project?
 
 This project is built with:
 
-- Vite
+- **Next.js 14** (Pages Router)
 - TypeScript
-- React
+- React 18
 - shadcn-ui
 - Tailwind CSS
+- TanStack Query (React Query)
 - OpenRouter API (for AI content generation)
 
 ## How can I deploy this project?

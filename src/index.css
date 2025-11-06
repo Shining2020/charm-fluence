@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "tw-animate-css";
+
+/* Import launch-ui utils */
+@import "./styles/utils.css";
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -38,6 +43,30 @@ All colors MUST be HSL.
 
     --radius: 1rem;
     
+    /* Launch UI brand colors */
+    --brand: oklch(66.5% 0.1804 47.04);
+    --brand-foreground: oklch(75.77% 0.159 55.91);
+    --light: var(--brand);
+    --light-foreground: var(--brand-foreground);
+    
+    /* Chart colors */
+    --chart-1: oklch(0.88 0.12765 293.571);
+    --chart-2: oklch(0.74 0.11655 5.571);
+    --chart-3: oklch(0.82 0.1332 77.571);
+    --chart-4: oklch(0.68 0.111 149.571);
+    --chart-5: oklch(0.86 0.10545 221.571);
+    
+    /* Shadows */
+    --shadow: #00000008;
+    --shadow-strong: #00000008;
+    
+    /* Line width */
+    --line-width: 1px;
+    
+    /* Container spacing */
+    --spacing-container: 1280px;
+    --spacing-container-lg: 1536px;
+    
     --gradient-romantic: linear-gradient(135deg, hsl(345 80% 65%), hsl(15 85% 70%));
     --gradient-soft: linear-gradient(180deg, hsl(340 100% 98%), hsl(340 60% 96%));
     --shadow-soft: 0 8px 30px hsl(345 50% 85% / 0.4);
@@ -45,19 +74,12 @@ All colors MUST be HSL.
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -90,6 +112,23 @@ All colors MUST be HSL.
     --input: 340 25% 18%;
     --ring: 345 75% 60%;
     
+    /* Launch UI brand colors - dark */
+    --brand: oklch(83.6% 0.1177 66.87);
+    --brand-foreground: oklch(75.77% 0.159 55.91);
+    --light: var(--foreground);
+    --light-foreground: var(--foreground);
+    
+    /* Chart colors - dark */
+    --chart-1: oklch(0.651 0.297 262.581);
+    --chart-2: oklch(0.531 0.27 277.581);
+    --chart-3: oklch(0.431 0.3105 292.581);
+    --chart-4: oklch(0.591 0.2565 307.581);
+    --chart-5: oklch(0.351 0.2430 322.581);
+    
+    /* Shadows - dark */
+    --shadow: #00000020;
+    --shadow-strong: #00000088;
+    
     --gradient-romantic: linear-gradient(135deg, hsl(345 75% 60%), hsl(15 75% 65%));
     --gradient-soft: linear-gradient(180deg, hsl(340 30% 8%), hsl(340 25% 12%));
     --shadow-soft: 0 8px 30px hsl(345 50% 20% / 0.5);
@@ -112,5 +151,11 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-radial {
+    background-image: radial-gradient(circle, var(--tw-gradient-stops));
   }
 }
